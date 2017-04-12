@@ -1,16 +1,15 @@
-var matchLiteralModule = require('./match_literal');
+const matchLiteralModule = require('./match_literal');
 
-function test_match_literal(){
-  var fixture = {
+function testMatchLiteral(){
+  const fixture = {
     number: 3,
     word: 'Fizz'
   };
-  var num = 35;
-  var expectedResult = 'Fizz';
+  const num = 35;
+  const expectedResult = 'Fizz';
 
-  var result = matchLiteralModule.matchLiteral(num, fixture) === expectedResult ? 'test passed.' : 'test failed.';
-  console.log(matchLiteralModule.matchLiteral(num, fixture));
+  const result = matchLiteralModule.matchLiteral(num, fixture) === expectedResult ? 'test passed.' : 'test failed.';
   console.log(result);
 }
 
-test_match_literal();
+testMatchLiteral();

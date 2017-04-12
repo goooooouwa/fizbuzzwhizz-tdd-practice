@@ -1,34 +1,35 @@
-var generateOutputModule = require('./generate_output');
+const generateOutputModule = require('./generate_output');
 
-function test_generate_output_with_2_words(){
-  var fixture = [{
+function testGenerateOutputWith2Words(){
+  const fixture = [{
     number: 3,
     word: 'Fizz'
   },{
     number: 4,
     word: 'Whizz'
   }];
-  var expectedResult = 'FizzWhizz';
-  var result = generateOutputModule.generateOutput(fixture) === expectedResult ? 'test passed.' : 'test failed.';
+  const expectedResult = 'FizzWhizz';
+  const result = generateOutputModule.generateOutput(fixture) === expectedResult ? 'test passed.' : 'test failed.';
   console.log(result);
 }
 
-function test_generate_output_with_no_word(){
-  var fixture = [];
-  var expectedResult = null;
-  var result = generateOutputModule.generateOutput(fixture) === expectedResult ? 'test passed.' : 'test failed.';
+function testGenerateOutputWithNoWord(){
+  const fixture = [];
+  const expectedResult = null;
+  const result = generateOutputModule.generateOutput(fixture) === expectedResult ? 'test passed.' : 'test failed.';
   console.log(result);
 }
 
-function test_generate_output_with_1_word(){
-  var fixture = [{
+function testGenerateOutputWith1Word(){
+  const fixture = [{
     number: 3,
     word: 'Fizz'
   }];
-  var expectedResult = 'Fizz';
-  var result = generateOutputModule.generateOutput(fixture) === expectedResult ? 'test passed.' : 'test failed.';
-  console.log(generateOutputModule.generateOutput(fixture));
+  const expectedResult = 'Fizz';
+  const result = generateOutputModule.generateOutput(fixture) === expectedResult ? 'test passed.' : 'test failed.';
   console.log(result);
 }
 
-test_generate_output_with_1_word();
+testGenerateOutputWithNoWord();
+testGenerateOutputWith1Word();
+testGenerateOutputWith2Words();

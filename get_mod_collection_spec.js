@@ -1,8 +1,8 @@
-var getModCollectionModule = require('./get_mod_collection');
+const getModCollectionModule = require('./get_mod_collection');
 
 function testGetModCollection(){
-  var fixture = 35;
-  var table = [{
+  const fixture = 35;
+  const table = [{
     number: 3,
     word: 'Fizz'
   },{
@@ -13,7 +13,7 @@ function testGetModCollection(){
     word: 'Whizz'
   }];
 
-  var result = (getModCollectionModule.getModCollection(fixture, table).length === 2) ? 'test passed.' : 'test failed.';
+  const result = (getModCollectionModule.getModCollection(fixture, table).length === 2) ? 'test passed.' : 'test failed.';
   console.log(result);
 }
 
