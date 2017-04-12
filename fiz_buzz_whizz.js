@@ -19,7 +19,6 @@ function fizBuzzWhizz(a, b, c){
     collection.push(i);
   }
 
-
   const outputCollection = collection.map(function(num){
     let outputItem = matchLiteralModule.matchLiteral(num, table[0]);
     if ( outputItem === null) {
@@ -28,7 +27,6 @@ function fizBuzzWhizz(a, b, c){
     }
     return outputItem;
   });
-
   return outputCollection.join(' ');
 }
 
