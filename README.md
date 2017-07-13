@@ -8,7 +8,7 @@ a: Number
 b: Number
 c: Number
 输出：
-result: String
+words: String
 
 matchLiteral: 按数字字符匹配第一个特殊数（规则5）
 输入：
