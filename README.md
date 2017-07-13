@@ -47,3 +47,9 @@ modCollection
 输出：
 words: String
 ```
+
+# How to test
+```bash
+# In Bash
+$ ./run_all_spec.sh
+```
