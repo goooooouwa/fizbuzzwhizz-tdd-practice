@@ -1,6 +1,7 @@
 # fizbuzzwhizz-tdd-practice
 
 # Tasking
+```
 fizBuzzWhizz: 返回0-100对应的正确单词序列
 输入：
 a: Number
@@ -37,3 +38,4 @@ generateOutput: 将某因子集合转化成对应单词
 modCollection
 输出：
 words: String
+```
