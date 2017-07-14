@@ -29,15 +29,15 @@ function mapNumberToWord(testNumber, specialWords) {
   return word;
 }
 
-function fizBuzzWhizz(a, b, c){
+function fizBuzzWhizz(firstSpecialNumber, secondSpecialNumber, thirdSpeicalNumber){
   const specialWords = [{
-    number: a,
+    number: firstSpecialNumber,
     word: 'Fizz'
   },{
-    number: b,
+    number: secondSpecialNumber,
     word: 'Buzz'
   },{
-    number: c,
+    number: thirdSpeicalNumber,
     word: 'Whizz'
   }];
 
@@ -47,7 +47,7 @@ function fizBuzzWhizz(a, b, c){
   }
 
   const words = numbers.map(function(testNumber){
-    mapNumberToWord(testNumber, specialWords);
+    return mapNumberToWord(testNumber, specialWords);
   });
   return words.join(' ');
 }
@@ -55,4 +55,5 @@ function fizBuzzWhizz(a, b, c){
 module.exports.matchFirstSpecialNumber = matchFirstSpecialNumber;
 module.exports.getFactors = getFactors;
 module.exports.mapFactorsToWords = mapFactorsToWords;
+module.exports.mapNumberToWord = mapNumberToWord;
 module.exports.fizBuzzWhizz = fizBuzzWhizz;
