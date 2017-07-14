@@ -29,7 +29,7 @@ function mapNumberToWord(testNumber, specialWords) {
   return word;
 }
 
-function fizBuzzWhizz(firstSpecialNumber, secondSpecialNumber, thirdSpeicalNumber){
+function fizBuzzWhizz(firstSpecialNumber, secondSpecialNumber, thirdSpecialNumber){
   const specialWords = [{
     number: firstSpecialNumber,
     word: 'Fizz'
@@ -37,7 +37,7 @@ function fizBuzzWhizz(firstSpecialNumber, secondSpecialNumber, thirdSpeicalNumbe
     number: secondSpecialNumber,
     word: 'Buzz'
   },{
-    number: thirdSpeicalNumber,
+    number: thirdSpecialNumber,
     word: 'Whizz'
   }];
 
