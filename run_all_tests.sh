@@ -1,6 +1,6 @@
 #!/bin/bash
 
-for file in $(ls *_spec.js)
+for file in $(ls *_test.js)
 do
   echo $file
   node $file

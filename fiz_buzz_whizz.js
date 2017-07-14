@@ -1,9 +1,27 @@
-const getModCollectionModule = require('./get_mod_collection');
-const generateOutputModule = require('./generate_output');
-const matchLiteralModule = require('./match_literal');
+function matchFirstSpecialNumber(testNumber, specialWord){
+  return (testNumber.toString().indexOf(specialWord.number.toString()) !== -1) ? specialWord.word : null;
+}
+
+function getFactors(testNumber, specialWords){
+  return specialWords.filter(function(entry){
+    return (testNumber % entry.number === 0);
+  })
+}
+
+function mapFactorsToWords(factors) {
+  if (factors.length === 0){
+    return null;
+  } else {
+    return factors.map(function(item){
+      return item.word;
+    }).reduce(function(leftItem, rightItem){
+      return leftItem + rightItem;
+    });
+  }
+}
 
 function fizBuzzWhizz(a, b, c){
-  const table = [{
+  const specialWords = [{
     number: a,
     word: 'Fizz'
   },{
@@ -14,20 +32,23 @@ function fizBuzzWhizz(a, b, c){
     word: 'Whizz'
   }];
 
-  let collection = [];
+  let numbers = [];
   for (let i = 1; i <= 100; i++) {
-    collection.push(i);
+    numbers.push(i);
   }
 
-  const outputCollection = collection.map(function(num){
-    let outputItem = matchLiteralModule.matchLiteral(num, table[0]);
-    if ( outputItem === null) {
-      let modCollection = getModCollectionModule.getModCollection(num, table);
-      outputItem = (modCollection.length === 0) ? num.toString() : generateOutputModule.generateOutput(modCollection);
+  const words = numbers.map(function(testNumber){
+    let word = matchFirstSpecialNumber(testNumber, specialWords[0]);
+    if ( word === null) {
+      let factors = getFactors(testNumber, specialWords);
+      word = (factors.length === 0) ? testNumber.toString() : mapFactorsToWords(factors);
     }
-    return outputItem;
+    return word;
   });
-  return outputCollection.join(' ');
+  return words.join(' ');
 }
 
+module.exports.matchFirstSpecialNumber = matchFirstSpecialNumber;
+module.exports.getFactors = getFactors;
+module.exports.mapFactorsToWords = mapFactorsToWords;
 module.exports.fizBuzzWhizz = fizBuzzWhizz;
