@@ -1,8 +1,8 @@
 const fizBuzzWhizzModule = require('./fiz_buzz_whizz');
 
 function testGetFactors(){
-  const fixture = 35;
-  const table = [{
+  const testNumber = 35;
+  const specialWords = [{
     number: 3,
     word: 'Fizz'
   },{
@@ -13,7 +13,7 @@ function testGetFactors(){
     word: 'Whizz'
   }];
 
-  const result = (fizBuzzWhizzModule.getFactors(fixture, table).length === 2) ? 'test passed.' : 'test failed.';
+  const result = (fizBuzzWhizzModule.getFactors(testNumber, specialWords).length === 2) ? 'test passed.' : 'test failed.';
   console.log(result);
 }
 
