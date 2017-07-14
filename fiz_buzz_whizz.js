@@ -20,6 +20,15 @@ function mapFactorsToWords(factors) {
   }
 }
 
+function mapNumberToWord(testNumber, specialWords) {
+  let word = matchFirstSpecialNumber(testNumber, specialWords[0]);
+  if ( word === null) {
+    let factors = getFactors(testNumber, specialWords);
+    word = (factors.length === 0) ? testNumber.toString() : mapFactorsToWords(factors);
+  }
+  return word;
+}
+
 function fizBuzzWhizz(a, b, c){
   const specialWords = [{
     number: a,
@@ -38,12 +47,7 @@ function fizBuzzWhizz(a, b, c){
   }
 
   const words = numbers.map(function(testNumber){
-    let word = matchFirstSpecialNumber(testNumber, specialWords[0]);
-    if ( word === null) {
-      let factors = getFactors(testNumber, specialWords);
-      word = (factors.length === 0) ? testNumber.toString() : mapFactorsToWords(factors);
-    }
-    return word;
+    mapNumberToWord(testNumber, specialWords);
   });
   return words.join(' ');
 }
